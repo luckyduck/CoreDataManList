@@ -1,0 +1,20 @@
+{
+    "fahrzeuge": [
+        {
+        "name": "HLF 1"
+        "checkliste": ["Geräteraum 1", "Geräteraum 2", "Geräteraum 3"]
+        },
+                  {
+        "name": "ELW"
+        "checkliste": ["Geräteraum 1", "Geräteraum 2", "Geräteraum 3"]
+        },
+        {
+        "name": "DLK"
+        "checkliste": ["Geräteraum 1", "Geräteraum 2", "Geräteraum 3"]
+        },
+        {
+        "name": "HLF 2"
+        "checkliste": ["Geräteraum 1", "Geräteraum 2", "Geräteraum 3"]
+        },
+    ]
+}

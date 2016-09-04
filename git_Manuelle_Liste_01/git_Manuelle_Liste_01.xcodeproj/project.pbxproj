@@ -13,6 +13,12 @@
 		C05FC09C1D7C3E4C00C134EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05FC09B1D7C3E4C00C134EB /* Assets.xcassets */; };
 		C05FC09F1D7C3E4C00C134EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05FC09D1D7C3E4C00C134EB /* LaunchScreen.storyboard */; };
 		C05FC0A71D7C538700C134EB /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05FC0A61D7C538700C134EB /* ResourceModel.swift */; };
+		C05FC0AA1D7C640C00C134EB /* FZUebernahme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C05FC0A81D7C640C00C134EB /* FZUebernahme.xcdatamodeld */; };
+		C05FC0AF1D7C68F200C134EB /* Fahrzeug+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05FC0AB1D7C68F200C134EB /* Fahrzeug+CoreDataProperties.swift */; };
+		C05FC0B01D7C68F200C134EB /* Fahrzeug.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05FC0AC1D7C68F200C134EB /* Fahrzeug.swift */; };
+		C05FC0B11D7C68F200C134EB /* Checkliste+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05FC0AD1D7C68F200C134EB /* Checkliste+CoreDataProperties.swift */; };
+		C05FC0B21D7C68F200C134EB /* Checkliste.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05FC0AE1D7C68F200C134EB /* Checkliste.swift */; };
+		C05FC0B51D7C693D00C134EB /* preload.json in Resources */ = {isa = PBXBuildFile; fileRef = C05FC0B41D7C693D00C134EB /* preload.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		C05FC09E1D7C3E4C00C134EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C05FC0A01D7C3E4C00C134EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C05FC0A61D7C538700C134EB /* ResourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
+		C05FC0A91D7C640C00C134EB /* FZUebernahme.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FZUebernahme.xcdatamodel; sourceTree = "<group>"; };
+		C05FC0AB1D7C68F200C134EB /* Fahrzeug+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fahrzeug+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C05FC0AC1D7C68F200C134EB /* Fahrzeug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fahrzeug.swift; sourceTree = "<group>"; };
+		C05FC0AD1D7C68F200C134EB /* Checkliste+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Checkliste+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C05FC0AE1D7C68F200C134EB /* Checkliste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkliste.swift; sourceTree = "<group>"; };
+		C05FC0B41D7C693D00C134EB /* preload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = preload.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,8 @@
 		C05FC0931D7C3E4C00C134EB /* git_Manuelle_Liste_01 */ = {
 			isa = PBXGroup;
 			children = (
+				C05FC0A81D7C640C00C134EB /* FZUebernahme.xcdatamodeld */,
+				C05FC0B31D7C690D00C134EB /* CoreData */,
 				C05FC0941D7C3E4C00C134EB /* AppDelegate.swift */,
 				C05FC0A61D7C538700C134EB /* ResourceModel.swift */,
 				C05FC0961D7C3E4C00C134EB /* ViewController.swift */,
@@ -63,8 +77,21 @@
 				C05FC09B1D7C3E4C00C134EB /* Assets.xcassets */,
 				C05FC09D1D7C3E4C00C134EB /* LaunchScreen.storyboard */,
 				C05FC0A01D7C3E4C00C134EB /* Info.plist */,
+				C05FC0B41D7C693D00C134EB /* preload.json */,
 			);
 			path = git_Manuelle_Liste_01;
+			sourceTree = "<group>";
+		};
+		C05FC0B31D7C690D00C134EB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C05FC0AB1D7C68F200C134EB /* Fahrzeug+CoreDataProperties.swift */,
+				C05FC0AC1D7C68F200C134EB /* Fahrzeug.swift */,
+				C05FC0AD1D7C68F200C134EB /* Checkliste+CoreDataProperties.swift */,
+				C05FC0AE1D7C68F200C134EB /* Checkliste.swift */,
+			);
+			name = CoreData;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +156,7 @@
 				C05FC09F1D7C3E4C00C134EB /* LaunchScreen.storyboard in Resources */,
 				C05FC09C1D7C3E4C00C134EB /* Assets.xcassets in Resources */,
 				C05FC09A1D7C3E4C00C134EB /* Main.storyboard in Resources */,
+				C05FC0B51D7C693D00C134EB /* preload.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +168,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C05FC0971D7C3E4C00C134EB /* ViewController.swift in Sources */,
+				C05FC0AA1D7C640C00C134EB /* FZUebernahme.xcdatamodeld in Sources */,
+				C05FC0B21D7C68F200C134EB /* Checkliste.swift in Sources */,
 				C05FC0A71D7C538700C134EB /* ResourceModel.swift in Sources */,
+				C05FC0B11D7C68F200C134EB /* Checkliste+CoreDataProperties.swift in Sources */,
 				C05FC0951D7C3E4C00C134EB /* AppDelegate.swift in Sources */,
+				C05FC0AF1D7C68F200C134EB /* Fahrzeug+CoreDataProperties.swift in Sources */,
+				C05FC0B01D7C68F200C134EB /* Fahrzeug.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +328,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C05FC0A81D7C640C00C134EB /* FZUebernahme.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C05FC0A91D7C640C00C134EB /* FZUebernahme.xcdatamodel */,
+			);
+			currentVersion = C05FC0A91D7C640C00C134EB /* FZUebernahme.xcdatamodel */;
+			path = FZUebernahme.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C05FC0891D7C3E4C00C134EB /* Project object */;
 }
