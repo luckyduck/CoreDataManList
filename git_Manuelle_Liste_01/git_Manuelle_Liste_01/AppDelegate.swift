@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    private var docDir: NSURL = {
+    lazy var docDir: NSURL = {
         let fileStoreUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         guard let saveUrl = fileStoreUrl.first else {
             fatalError("No such URL found")
