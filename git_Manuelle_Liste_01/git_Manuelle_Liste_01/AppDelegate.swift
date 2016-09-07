@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let resourceModel = ResourceModel()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -48,7 +50,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return saveUrl
     }()
-
-
+    
+    func preload() {
+        let preloadData = readPreload()
+        for (fahrzeug, checklist) in preloadData! {
+            resourceModel.loadDataFromPreload(fahrzeug, checklist)
+        }
+    }
+    
+    func readPreload() ->[String:[String]]? {
+        
+        guard let fileUrlToRead = NSBundle.mainBundle().URLForResource("preload", withExtension: "json") else {
+            fatalError("No File to Read")
+        }
+        let preloadData = NSData(contentsOfURL: fileUrlToRead)
+        do {
+            let jsonData = try NSJSONSerialization.JSONObjectWithData(preloadData!, options: .AllowFragments)
+            
+            var preloadedData = [String:[String]]()
+            let fahrzeugliste = jsonData["fahrzeuge"] as! NSArray
+            for fahrzeugCheckliste in fahrzeugliste {
+                let fahrzeug = fahrzeugCheckliste["name"] as! String
+                let checkliste = fahrzeugCheckliste["checkliste"] as! [String]
+                preloadedData[fahrzeug] = checkliste
+            }
+            return preloadedData
+            
+            
+        } catch {
+            print("Can't handl json Data")
+        }
+        
+        return nil
+    }
+    
 }
 

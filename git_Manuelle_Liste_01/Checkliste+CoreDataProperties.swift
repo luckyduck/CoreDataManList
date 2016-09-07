@@ -14,7 +14,7 @@ import CoreData
 
 extension Checkliste {
 
-    @NSManaged var material: UNKNOWN_TYPE
+    @NSManaged var material: String?
     @NSManaged var fahrzeug: Fahrzeug?
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 7.0">
     <entity name="Checkliste" representedClassName=".Checkliste" syncable="YES">
-        <attribute name="material" optional="YES" syncable="YES"/>
+        <attribute name="material" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="fahrzeug" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fahrzeug" inverseName="materialien" inverseEntity="Fahrzeug" syncable="YES"/>
     </entity>
     <entity name="Fahrzeug" representedClassName=".Fahrzeug" syncable="YES">
@@ -10,7 +10,7 @@
         <relationship name="materialien" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Checkliste" inverseName="fahrzeug" inverseEntity="Checkliste" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Fahrzeug" positionX="-234" positionY="-9" width="128" height="88"/>
         <element name="Checkliste" positionX="-54" positionY="9" width="128" height="73"/>
+        <element name="Fahrzeug" positionX="-234" positionY="-9" width="128" height="88"/>
     </elements>
 </model>
