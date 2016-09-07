@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let resourceModel = ResourceModel()
+    
+    var ISPRELOADED = "isPreloaded"
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -53,6 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     func preload() {
+        if NSUserDefaults.standardUserDefaults().boolForKey(ISPRELOADED) {
+            return
+        }
+        
         let preloadData = readPreload()
         for (fahrzeug, checkliste) in preloadData! {
             resourceModel.loadDataFromPreload(fahrzeug, checkliste)
@@ -76,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 preloadedData[fahrzeug] = checkliste
             }
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: ISPRELOADED)
             return preloadedData
             
             

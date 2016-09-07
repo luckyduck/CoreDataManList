@@ -77,5 +77,10 @@ class ResourceModel {
         
         return nil
     }
+    
+    func deleteRows(fahrzeug: Fahrzeug) {
+        self.managedObjectContext.deleteObject(fahrzeug)
+        saveContext()
+    }
         
 }

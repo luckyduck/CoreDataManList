@@ -51,6 +51,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func loadMyVehicles(){
         fahrzeug = self.appDelegate.resourceModel.loadData()
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            tableView.beginUpdates()
+            self.appDelegate.resourceModel.deleteRows(fahrzeug![indexPath.row])
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+            fahrzeug?.removeAtIndex(indexPath.row)
+            tableView.endUpdates()
+        }
+    }
 
 }
 
