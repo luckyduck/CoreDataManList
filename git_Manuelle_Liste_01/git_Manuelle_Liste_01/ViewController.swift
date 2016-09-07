@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCellWithIdentifier("fahrzeugCell")
         
         if fahrzeug != nil {
-            cell!.textLabel!.text = fahrzeug![indexPath.row].name
+            cell!.textLabel!.text = fahrzeug![indexPath.row].namo
         }
         
         return cell!
@@ -59,6 +59,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
             fahrzeug?.removeAtIndex(indexPath.row)
             tableView.endUpdates()
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showCheckListController" {
+            let ctrl = segue.destinationViewController as! CheckListController
+            let indexPath = tabellenAnsicht.indexPathForSelectedRow
+            ctrl.fahrzeug = fahrzeug![indexPath!.row]
         }
     }
 

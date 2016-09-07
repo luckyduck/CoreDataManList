@@ -51,13 +51,13 @@ class ResourceModel {
     
     func loadDataFromPreload(fahrzeug: String, _ checklist: [String]) {
         let newFahrzeug = NSEntityDescription.insertNewObjectForEntityForName("Fahrzeug", inManagedObjectContext: self.managedObjectContext) as? Fahrzeug
-        newFahrzeug?.name = fahrzeug
+        newFahrzeug?.namo = fahrzeug
         saveContext()
         
         var tmpCheckliste = [Checkliste]()
         for newChecklisteEntry in checklist {
             let newChkEntry = NSEntityDescription.insertNewObjectForEntityForName("Checkliste", inManagedObjectContext: self.managedObjectContext) as? Checkliste
-            newChkEntry?.material = newChecklisteEntry
+            newChkEntry?.name = newChecklisteEntry
             newChkEntry?.fahrzeug = newFahrzeug
             tmpCheckliste.append(newChkEntry!)
             saveContext()

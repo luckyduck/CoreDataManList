@@ -2,7 +2,7 @@
 //  Fahrzeug+CoreDataProperties.swift
 //  git_Manuelle_Liste_01
 //
-//  Created by Stefan Jölly on 04.09.16.
+//  Created by Stefan Jölly on 08.09.16.
 //  Copyright © 2016 Stefan Jölly. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,8 +14,8 @@ import CoreData
 
 extension Fahrzeug {
 
-    @NSManaged var name: String?
     @NSManaged var checked: NSNumber?
+    @NSManaged var namo: String?
     @NSManaged var materialien: NSOrderedSet?
 
 }
