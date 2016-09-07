@@ -11,7 +11,7 @@ import CoreData
 
 class ResourceModel {
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    lazy var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     private lazy var managedObjectModel: NSManagedObjectModel = {
         let modelUrl = NSBundle.mainBundle().URLForResource("FZUebernahme", withExtension: "momd")
@@ -60,7 +60,22 @@ class ResourceModel {
             newChkEntry?.material = newChecklisteEntry
             newChkEntry?.fahrzeug = newFahrzeug
             tmpCheckliste.append(newChkEntry!)
+            saveContext()
         }
         }
+    
+    func loadData() -> [Fahrzeug]? {
+        let request = NSFetchRequest(entityName: "Fahrzeug")
+        var fahrzeugListe = [Fahrzeug]()
+        do {
+            fahrzeugListe = try managedObjectContext.executeFetchRequest(request) as! [Fahrzeug]
+            
+            return fahrzeugListe
+        } catch {
+            fatalError("Can't Find any Vehicles")
+        }
+        
+        return nil
+    }
         
 }

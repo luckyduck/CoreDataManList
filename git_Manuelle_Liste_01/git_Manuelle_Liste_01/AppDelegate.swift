@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        preload()
         return true
     }
 
@@ -53,8 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func preload() {
         let preloadData = readPreload()
-        for (fahrzeug, checklist) in preloadData! {
-            resourceModel.loadDataFromPreload(fahrzeug, checklist)
+        for (fahrzeug, checkliste) in preloadData! {
+            resourceModel.loadDataFromPreload(fahrzeug, checkliste)
         }
     }
     
@@ -72,13 +73,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             for fahrzeugCheckliste in fahrzeugliste {
                 let fahrzeug = fahrzeugCheckliste["name"] as! String
                 let checkliste = fahrzeugCheckliste["checkliste"] as! [String]
+                
                 preloadedData[fahrzeug] = checkliste
             }
             return preloadedData
             
             
         } catch {
-            print("Can't handl json Data")
+            print("Can't handle json Data")
         }
         
         return nil

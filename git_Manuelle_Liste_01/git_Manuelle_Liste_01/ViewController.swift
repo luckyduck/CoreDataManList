@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tabellenAnsicht: UITableView!
     
+    var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     var fahrzeug = [Fahrzeug]?()
 
     override func viewDidLoad() {
@@ -21,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        
+        loadMyVehicles()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +48,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell!
     }
     
-    
+    func loadMyVehicles(){
+        fahrzeug = self.appDelegate.resourceModel.loadData()
+    }
 
 }
 
