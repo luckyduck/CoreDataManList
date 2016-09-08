@@ -14,7 +14,7 @@ import CoreData
 
 extension Checkliste {
 
-    @NSManaged var name: String?
+    @NSManaged var material: String?
     @NSManaged var fahrzeug: Fahrzeug?
 
 }

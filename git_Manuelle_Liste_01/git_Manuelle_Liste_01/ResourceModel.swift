@@ -57,7 +57,7 @@ class ResourceModel {
         var tmpCheckliste = [Checkliste]()
         for newChecklisteEntry in checklist {
             let newChkEntry = NSEntityDescription.insertNewObjectForEntityForName("Checkliste", inManagedObjectContext: self.managedObjectContext) as? Checkliste
-            newChkEntry?.name = newChecklisteEntry
+            newChkEntry?.material = newChecklisteEntry
             newChkEntry?.fahrzeug = newFahrzeug
             tmpCheckliste.append(newChkEntry!)
             saveContext()

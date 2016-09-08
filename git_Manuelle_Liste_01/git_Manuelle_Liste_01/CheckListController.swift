@@ -21,9 +21,9 @@ class CheckListController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("checkListCell", forIndexPath: indexPath)
         
-        let checkListEntry = fahrzeug?.materialien?.objectAtIndex(indexPath.row)
+        let checkListEntry = fahrzeug?.materialien?.objectAtIndex(indexPath.row) as! Checkliste
         //Hier kann ich nur über die Abfrage .name die "Unterliste" anzeigen lassen.
-        cell.textLabel?.text = checkListEntry?.name
+        cell.textLabel?.text = checkListEntry.material
         
         
         return cell
