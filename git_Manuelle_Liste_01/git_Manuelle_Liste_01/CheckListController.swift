@@ -12,16 +12,33 @@ class CheckListController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tabellenAnsicht: UITableView!
     
-    var fahrzeug: Fahrzeug!
+    var fahrzeug: Fahrzeug?
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (fahrzeug?.materialien?.count)!
+        guard let fahrzeug = fahrzeug else {
+            return 0
+        }
+        
+        guard let materialien = fahrzeug.materialien else {
+            return 0
+        }
+        
+        return materialien.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("checkListCell", forIndexPath: indexPath)
         
-        let checkListEntry = fahrzeug?.materialien?.objectAtIndex(indexPath.row) as! Checkliste
+        guard let fahrzeug = fahrzeug else {
+            return cell
+        }
+        
+        guard let materialien = fahrzeug.materialien else {
+            return cell
+        }
+        
+        let checkListEntry = materialien.objectAtIndex(indexPath.row) as! Checkliste
+        
         //Hier kann ich nur über die Abfrage .name die "Unterliste" anzeigen lassen.
         cell.textLabel?.text = checkListEntry.material
         
